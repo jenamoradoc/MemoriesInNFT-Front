@@ -1,0 +1,5 @@
+.container {
+  display: grid;
+  grid-template-columns: 400px calc(100% - 400px);
+  align-items: center;
+}
