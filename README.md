@@ -1,6 +1,5 @@
-# Github Search Users App --Test
+# Memories Base
 
-Search github users app make for test propuses as request of [Scalio](https://scal.io/) base on the next [Requirements](https://www.notion.so/Web-Angular-ReactJS-Test-Assignment-308d84eaa51c4f22b1f65d60efcd7186)
 
 ## Installation
 
@@ -31,20 +30,6 @@ npm test
 Run test executing on the terminal next comand.
 
 ![image](https://user-images.githubusercontent.com/26368576/184756278-c1177acd-7c56-4300-a5d5-447739e5331a.png)
-
-
-
-# Thanks
-
-<div id="header" align="center">
-  <img src="https://media.giphy.com/media/M9gbBd9nbDrOTu1Mqx/giphy.gif" width="100"/>
-</div>
-
-<div id="badges">
-  <a href="https://www.linkedin.com/in/jeamoradoc/">
-    <img src="https://img.shields.io/badge/LinkedIn-blue?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn Badge"/>
-  </a>
-</div>
 
 
 
