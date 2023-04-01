@@ -4,7 +4,6 @@ import Spinner from "../Spinner";
 
 import { LoginResults } from "../../interfaces";
 import { getDataFn } from "../../utils";
-import "./search.css";
 
 interface Props {
   usernameEntered: (login: string) => void;
@@ -61,32 +60,31 @@ const Search: FC<Props> = ({
 
   return (
     <>
-      <aside className="search__form-container">
-        <form onSubmit={handleSubmit} className="search__form">
-          <h1 className="search__form-title">Search github user(s)</h1>
-          <input
-            type="text"
-            value={login}
-            autoFocus
-            onChange={({ target }) => setLogin(target.value)}
-            className="search__form-input"
-          />
-
-          <div className="search__form-btns__container">
-            <button type="submit" className="search__form-btn">
-              Submit
-            </button>
-
-            <button className="search__form-btn" onClick={handleClearFilter}>
-              Clear Filter
+      <div className="px-24 pt-10 w-full">
+        <form onSubmit={handleSubmit} className="w-full">
+          <div className="flex justify-center">
+            <h1 className="font-light text-lg md:text-3xl lg:text-6xl pb-10 text-white">Escribe tu historia</h1>
+          </div>
+          <div className="flex justify-center pb-5 h-full w-full">
+            <textarea
+              value={login}
+              autoFocus
+              onChange={({ target }) => setLogin(target.value)}
+              className="w-full lg:w-10/12 h-[300px] lg:h-[100px] lg:text-2xl p-2"
+              style={{ resize: "none" }}
+            />
+          </div>
+          <div className="flex justify-center">
+            <button type="submit" className="bg-blue-700 text-white px-5 py-2 rounded-md font-light">
+              Generar
             </button>
           </div>
 
           {message.trim().length > 0 && (
-            <p className="error__message">{message}</p>
+            <p className="">{message}</p>
           )}
         </form>
-      </aside>
+      </div>
       {loading && <Spinner />}
     </>
   );

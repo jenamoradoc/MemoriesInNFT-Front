@@ -2,8 +2,6 @@ import { FC, useEffect, useState } from "react";
 
 import { LoginResults } from "../../interfaces";
 import { getDataFn } from "../../utils";
-import team from "../../assets/team.svg";
-import "./results.css";
 
 interface Props {
   login: string;
@@ -65,79 +63,10 @@ const Results: FC<Props> = ({
     results.length === 9 ? [1, 2, 3, 4, 5, 6, 7, 8, 9] : [1];
 
   return (
-    <div>
-      {results.length > 0 ? (
-        <>
-          <select
-            className="results__sort"
-            value={selected}
-            onChange={({ target }) => setSelected(target.value)}
-          >
-            <option value="" disabled>
-              --Choose an option
-            </option>
-            {options.map(({ value, text }) => (
-              <option key={value} value={value}>
-                {text}
-              </option>
-            ))}
-          </select>
-          <ul className="results__list">
-            {results.map(({ id, login, avatar_url, type }) => (
-              <li key={id} className="results__list-item">
-                <img
-                  src={avatar_url}
-                  alt={login}
-                  className="results__list-item-image"
-                  draggable={false}
-                />
-                <strong className="results__list-item-login">{login}</strong>
-                <span className="results__list-item-type">{type}</span>
-              </li>
-            ))}
-          </ul>
-          <div className="buttons__container">
-            <button
-              onClick={() => setPage((page) => page - 1)}
-              disabled={page <= 1}
-              style={{ borderRadius: "5px 0 0 5px" }}
-            >
-              &laquo;
-            </button>
-            {pages.map((pageNumber) => (
-              <button
-                key={pageNumber}
-                onClick={() => setPage(pageNumber)}
-                disabled={page === pageNumber}
-                data-testid={pageNumber}
-              >
-                {pageNumber}
-              </button>
-            ))}
-            <button
-              onClick={() => setPage((page) => page + 1)}
-              disabled={page === pages.length}
-              style={{ borderRadius: "0 5px 5px 0" }}
-            >
-              &raquo;
-            </button>
-          </div>
-        </>
-      ) : (
-        <div className="results__message">
-          {login.trim().length === 0 ? (
-            <>
-              <h2>GitHub User Search App</h2>
-              <img src={team} alt="Team" draggable={false} />
-            </>
-          ) : results.length === 0 ? (
-            <>
-              <h2>Results not found!</h2>
-              <img src={team} alt="Team" draggable={false} />
-            </>
-          ) : null}
-        </div>
-      )}
+    <div className="flex justify-center">
+      <div className="w-[200px] max-h-[190px] md:w-[400px] md:max-h-[300px] lg:max-h-[220px] lg:max-w-[300px] 2xl:max-w-[1000px] 2xl:max-h-[2000px] flex justify-center py-[34px]">
+        <img src="https://png.pngtree.com/png-clipart/20221007/original/pngtree-argentina-flag-png-image_8663295.png" alt="argentina"/>
+      </div>
     </div>
   );
 };
