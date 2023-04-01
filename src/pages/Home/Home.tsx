@@ -1,5 +1,7 @@
 import { FC, useCallback, useState } from "react";
 
+import { motion } from "framer-motion";
+
 import { Results, Search } from "../../components";
 import { LoginResults } from "../../interfaces";
 
@@ -26,26 +28,30 @@ function Home() {
     []
   );
   return (
-    <div className="md:flex w-full">
-      <Search
-        changeLoading={changeLoading}
-        changeMessage={changeMessage}
-        getResults={getResults}
-        loading={loading}
-        message={message}
-        results={results}
-        usernameEntered={getLoginQuery}
-      />
-      <div className="flex justify-center">
-      <Results
-        changeLoading={changeLoading}
-        changeMessage={changeMessage}
-        getResults={getResults}
-        login={queryLogin}
-        results={results}
-      /> 
+    <motion.div 
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+      className="h-screen sm:pt-20 sm:flex-col w-full">
+      <div className="w-full h-full">
+        <Search
+          changeLoading={changeLoading}
+          changeMessage={changeMessage}
+          getResults={getResults}
+          loading={loading}
+          message={message}
+          results={results}
+          usernameEntered={getLoginQuery}
+        />
+        <Results
+          changeLoading={changeLoading}
+          changeMessage={changeMessage}
+          getResults={getResults}
+          login={queryLogin}
+          results={results}
+        />
       </div>
-    </div>
+    </motion.div>
   )
 }
 

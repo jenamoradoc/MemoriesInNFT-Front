@@ -11,14 +11,18 @@ import Footer from "./components/Footer/Footer";
 const App: FC = () => {
   const { pathname } = useLocation();
   return (
-    <div className="w-full">
-      {pathname !== "/" && <Navbar />}
-      <Routes>
-        <Route path="/" element={<Landing />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/aboutus" element={<AboutUs />} />
-      </Routes>
-      {pathname !== "/" && <Footer />}
+    <div className="w-full bg-islas bg-cover bg-center bg-no-repeat bg-fixed">
+      <div className={`backdrop-blur-sm w-screen h-full md:h-screen lg:h-full xl:h-full 2xl:h-screen ${
+        pathname !== "/" ? "bg-black/20" : "bg-black/95"
+      }`}>
+        {pathname !== "/" && <Navbar />}
+        <Routes>
+          <Route path="/" element={<Landing />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/aboutus" element={<AboutUs />} />
+        </Routes>
+        {pathname !== "/" && <Footer />}
+      </div>
     </div>
       
   );

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 
 function Nav() {
   return (
-      <div className='flex justify-between px-10 bg-cyan-100 py-2 border-b border-black'>
+      <div className='flex justify-between px-10 bg-cyan-100 py-2 border-b border-black fixed z-50 w-full'>
         <ul>
           <li className='w-[100px]'>
             <Link to="/">

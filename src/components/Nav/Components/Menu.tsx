@@ -11,7 +11,7 @@ function Menu(): JSX.Element {
 
   return (
     <div
-      className={`transition-all duration-100 ease-linear fixed top-0 bg-cyan-100
+      className={`transition-all duration-100 ease-linear fixed top-0 bg-cyan-100 z-50
         ${show === true ? "w-full h-screen" : "w-20 h-20 rounded-br-full"}
       `}
     >
